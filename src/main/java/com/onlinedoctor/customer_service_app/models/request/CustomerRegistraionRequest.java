@@ -11,6 +11,7 @@ public class CustomerRegistraionRequest{
     private String gender;
     private String  city;
     private int  pincode;
+    private String state;
     private String  password;
     private String  confirmPassword;
 }
