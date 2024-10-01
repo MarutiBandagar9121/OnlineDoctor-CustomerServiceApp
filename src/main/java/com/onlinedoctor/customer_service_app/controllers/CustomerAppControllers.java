@@ -44,9 +44,8 @@ public class CustomerAppControllers {
 
     @PostMapping("/login")
     public ResponseEntity<CustomerLoginResponse> loginController(@RequestBody CustomerLoginRequest req) {
-        CustomerLoginResponse resp=new CustomerLoginResponse();
-        resp.setUserName(req.getUserName());
-        return ResponseEntity.ok(resp);
+        val customerLoginResponse=customerLookupService.loginCheck(req);
+        return new ResponseEntity<>(customerLoginResponse,HttpStatus.FOUND);
     }
 
     @PutMapping("update/{id}")
