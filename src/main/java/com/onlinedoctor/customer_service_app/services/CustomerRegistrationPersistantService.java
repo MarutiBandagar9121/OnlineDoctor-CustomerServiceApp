@@ -1,11 +1,8 @@
 package com.onlinedoctor.customer_service_app.services;
 
-import lombok.RequiredArgsConstructor;
 import lombok.val;
 import lombok.extern.slf4j.Slf4j;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
 import com.onlinedoctor.customer_service_app.enitity.CustomerRegistrationEntity;
@@ -18,7 +15,6 @@ import com.onlinedoctor.customer_service_app.repository.CustomerRegistrationRepo
 public class CustomerRegistrationPersistantService {
     private final CustomerRegistrationRepository customerRegistrationRepository;
 
-    @Autowired
     public CustomerRegistrationPersistantService(CustomerRegistrationRepository customerRegistrationRepository){
         this.customerRegistrationRepository = customerRegistrationRepository;
 
@@ -35,7 +31,7 @@ public class CustomerRegistrationPersistantService {
         customerRegistrationEntity.setPincode(customerRegistrationRequest.getPincode());
         customerRegistrationEntity.setState(customerRegistrationRequest.getState());
         customerRegistrationEntity.setPassword(customerRegistrationRequest.getPassword());
-        System.out.println(" log:"+customerRegistrationEntity.getFirstname());
+        // System.out.println(" log:"+customerRegistrationEntity.getFirstname());
         return customerRegistrationRepository.save(customerRegistrationEntity);
 
     }
