@@ -2,6 +2,8 @@ package com.onlinedoctor.customer_service_app.enitity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -12,7 +14,11 @@ import lombok.Data;
 public class DoctorEntity {
 
     @Id
-    @Column(name = "username")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id; 
+
+    
+    @Column(name = "username",unique=true)
     private String username;
     
     @Column(name = "lastname")

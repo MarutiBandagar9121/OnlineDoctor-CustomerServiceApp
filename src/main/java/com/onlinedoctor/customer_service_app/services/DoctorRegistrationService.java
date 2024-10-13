@@ -7,12 +7,14 @@ import com.onlinedoctor.customer_service_app.enitity.DoctorEntity;
 import com.onlinedoctor.customer_service_app.models.request.DoctorRegistrationRequest;
 import com.onlinedoctor.customer_service_app.repository.DoctorRepository;
 
-import jakarta.persistence.Id;
-
 @Service
 public class DoctorRegistrationService {
     @Autowired
     private DoctorRepository doctorRepository;
+
+    public DoctorRegistrationService(DoctorRepository doctorRepository){
+        this.doctorRepository=doctorRepository;
+    }
 
     public DoctorEntity addDoctorAccount(DoctorRegistrationRequest docRegRequest){
         DoctorEntity docEntity=new DoctorEntity();

@@ -1,14 +1,15 @@
 CREATE TABLE IF NOT EXISTS doctors(
-    firstname varchar(50) NOT NULL,
-    lastname varchar(50),
-    username varchar(50) PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) UNIQUE,
+    lastname VARCHAR(255),
+    firstname VARCHAR(255),
+    qualification VARCHAR(255),
+    yearsofexperience VARCHAR(255),
+    speciality VARCHAR(255),
     age INT,
-    qualification varchar(50),
-    yearsOfExperience varchar(50),
-    speciality varchar(30),
-    gender varchar(15),
-    city varchar(30),
-    state varchar(30),
+    gender VARCHAR(50),
+    city VARCHAR(100),
+    state VARCHAR(100),
     pincode INT,
-    password varchar(30)
+    password VARCHAR(255)
 )
